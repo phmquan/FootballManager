@@ -1,3 +1,8 @@
+<?php
+require_once('D:\Workspace\FootballManagerWeb\FootballManager\databse\config.php');
+getConnection();
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,10 +10,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Football League Management</title>
     <link rel="stylesheet" href="../assets/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../assets/styles/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="../assets/styles/FLM-2023.HomePage.css" asp-append-version="true" />
-    <link rel="stylesheet" href="../assets/styles/FLM-2023.navbar.css" asp-append-version="true" />
-    <link rel="stylesheet" href="../assets/styles/Football_League_App.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="../assets/styles/site.css"  />
+    <link rel="stylesheet" href="../assets/styles/FLM-2023.HomePage.css"  />
+    <link rel="stylesheet" href="../assets/styles/FLM-2023.navbar.css" />
+    <link rel="stylesheet" href="../assets/styles/Football_League_App.styles.css" />
     
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
