@@ -1,3 +1,27 @@
+<?php
+	include_once('../databse/user.php');
+	session_start();
+	ob_start();
+	if((isset($_POST['btnLogin']))&&(isset($_POST['btnLogin']))){
+
+		$user = $_POST['txtUser'];
+		$pass = $_POST['txtPass'];
+		$user=checkuser($user,$pass);
+		$_SESSION['role']=$user;
+		if($user!=null){
+			$_SESSION['user']=$user;
+			if($user=="manager"){
+				header("Location: dashboard.php");
+			}
+		}
+		else{
+			echo "<script>alert('Login failed');</script>";
+		}
+
+	}
+?>
+
+
 <html>
 
 <head>
@@ -11,7 +35,7 @@
 		<div class="login-card">
 			<div class="column">
 				<h1>Login</h1>
-				<form method="POST">
+				<form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
 					<div class="form-item">
 						<input type="text" class="form-element" placeholder="✉️ |  Username or Email" name="txtUser" required>
 					</div>
@@ -29,13 +53,12 @@
 							Sign in with Google
 						</a>
 					</div>
-
 				</form>
 			</div>
 			<div class="column">
 				<h2>Welcome to Football League Management App</h2>
 				<p>If you don't have an account, would you like to register right now</p>
-				<a href="register.html">Sign Up</a>
+				<a href="register.php">Sign Up</a>
 			</div>
 		</div>
 	</div>

@@ -1,3 +1,23 @@
+<?php
+	include_once('../databse/user.php');
+	session_start();
+	
+	if((isset($_POST['btnSignUp']))&&(isset($_POST['btnSignUp']))){
+		$user=$_POST['txtUser'];
+		$pass=$_POST['txtPass'];
+		if(checkuser($user,$pass)==null){
+			createuser($user,$pass);
+			$_SESSION['user']=$user;
+			echo "<script>alert('Sign up successfully');</script>";
+			header("Location: dashboard.php");
+		}
+		else{
+			echo "<script>alert('Sign up failed');</script>";
+		}
+	}
+
+?>
+
 <html>
 
 <head>
@@ -45,7 +65,7 @@
 					</label>
 					<div id="error-message" style="color: #f44336; display: none;">You must accept the terms of service.</div>
 					<div class="flex">
-						<button type="submit" class="btn btn-primary">Create Account</button>
+						<button type="submit" class="btn btn-primary" name="btnSignUp">Create Account</button>
 					</div>
 					<p style="margin-top:3rem;margin-bottom:1.5rem">Other sign-up methods</p>
 					<div class="sign-in-with-google">

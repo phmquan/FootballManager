@@ -14,13 +14,15 @@ ul li{
     position: relative;
 }
 
-ul li a{
-    display: block;
+ul li a,
+ul form li button {
+    display: inline-block; /* or display: inline; */
     padding: 15px 20px;
     color: #FFF;
     text-decoration: none;
     font-size: 20px;
 }
+
 
 ul li ul.dropdown li{
     display: block;
@@ -38,7 +40,10 @@ ul li a:hover{
     background: #112C66;
     color: deepskyblue;
 }
-
+ul form li button :hover{
+    background: #112C66;
+    color: deepskyblue;
+}
 ul li:hover ul.dropdown{
     display: block;
 }

@@ -1,7 +1,10 @@
 <?php
 require_once('D:\Workspace\FootballManagerWeb\FootballManager\databse\config.php');
-getConnection();
 session_start();
+if($_SESSION['user']){
+    header("Location: dashboard.php");
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,7 +43,7 @@ session_start();
                                     About Us
                             </a>
 
-                            <a class="join-link" href="login.html">
+                            <a class="join-link" href="login.php">
                                 Login
                             </a>
                 </div>
@@ -77,11 +80,8 @@ session_start();
             
                         <div class="hero-banner">
             
-                            <img src="../assets/images/football-league-logo.png" width="400" height="600" alt="Ucpc" class="w-100">
+                            <img src="../assets/images/premier-league-1.svg" width="400" height="600" alt="Ucpc" class="w-100">
             
-                            <img src="../assets/images/soccer-ball.svg" width="40" height="40" alt="shape" class="shape shape-1">
-            
-                            <img src="../assets/images/trophy.svg" width="40" height="40" alt="shape" class="shape shape-2">
             
                         </div>
             
@@ -97,7 +97,7 @@ session_start();
 
     <footer class="border-top footer text-muted">
         <div class="container" style="text-align:center; margin-top:10px">
-            &copy; 2023 - Football_League_App - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2024 - Football_League_App - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="../assets/lib/jquery/dist/jquery.min.js"></script>

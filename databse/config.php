@@ -6,13 +6,17 @@ function getConnection(){
     $dbname = "flmdb";
     $conn = new mysqli($servername, $username, $password, $dbname);
     if ($conn->connect_error) {
-        
-        echo "<h1>Connection failed</h1>";
-    }
+        die("Connection failed: " . $conn->connect_error);
+    } 
     
-    echo "<h1>Connection success</h1>";
-    $conn->close();
+    return $conn;
+    
 }
 // Check connection
-
+function closeConnection($conn){
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    $conn->close();
+}
 ?>
